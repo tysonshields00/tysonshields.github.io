@@ -4,155 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tyson W. Shields | Portfolio & Lab</title>
-    <style>
-        :root {
-            --bg: #0a0a0a;
-            --surface: #1a1a1a;
-            --text: #eeeeee;
-            --text-muted: #a0a0a0;
-            --accent: #00ff88;
-            --accent-hover: #00cc6a;
-        }
-        body {
-            background-color: var(--bg);
-            color: var(--text);
-            font-family: 'Inter', system-ui, sans-serif;
-            margin: 0;
-            line-height: 1.6;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
-        
-        /* Navigation Bar */
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            padding: 20px;
-            background: rgba(10, 10, 10, 0.8);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            border-bottom: 1px solid #222;
-        }
-        nav a {
-            color: var(--text);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        nav a:hover {
-            color: var(--accent);
-        }
-
-        /* General Section Styling */
-        section {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 100px 20px 40px;
-            box-sizing: border-box;
-            text-align: center;
-        }
-
-        /* Hero Section */
-        #home h1 {
-            font-size: 4rem;
-            margin-bottom: 0.5rem;
-            color: var(--accent);
-            letter-spacing: -1px;
-        }
-        #home h2 {
-            font-size: 1.5rem;
-            font-weight: 400;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin-top: 0;
-        }
-
-        /* About / Experience Grid */
-        .content-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            max-width: 900px;
-            width: 100%;
-            margin-top: 3rem;
-        }
-        .card {
-            background: var(--surface);
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid #333;
-            text-align: left;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent);
-        }
-        .card h3 {
-            color: var(--accent);
-            margin-top: 0;
-            font-size: 1.25rem;
-        }
-        .card p {
-            margin-bottom: 0;
-            color: var(--text-muted);
-        }
-        .card strong {
-            color: var(--text);
-        }
-
-        /* The Lab (Game Container) */
-        #game-container {
-            border: 2px solid var(--accent);
-            padding: 30px;
-            border-radius: 12px;
-            background: var(--surface);
-            box-shadow: 0 0 30px rgba(0, 255, 136, 0.1);
-            display: inline-block;
-            margin-top: 2rem;
-        }
-        canvas {
-            border-radius: 8px;
-            cursor: pointer;
-            box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
-            display: block;
-            margin: 0 auto;
-        }
-        #timerDisplay {
-            margin-top: 20px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-        .btn {
-            background: var(--accent);
-            color: var(--bg);
-            border: none;
-            padding: 12px 24px;
-            border-radius: 6px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 20px;
-            transition: background 0.3s ease;
-        }
-        .btn:hover {
-            background: var(--accent-hover);
-        }
-        
-        /* Responsive Tweaks */
-        @media (max-width: 768px) {
-            #home h1 { font-size: 3rem; }
-            nav { gap: 15px; font-size: 0.9rem; }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -167,9 +19,9 @@
         <h2>Bridging the gap between data, media, and client success.</h2>
     </section>
 
-    <section id="about" style="background-color: #111;">
-        <h2 style="font-size: 2.5rem; margin-bottom: 10px; color: var(--text);">Background & Experience</h2>
-        <p style="color: var(--text-muted); max-width: 700px; font-size: 1.1rem;">
+    <section id="about" class="about-section">
+        <h2 class="section-title text-white">Background & Experience</h2>
+        <p class="section-desc">
             I specialize in analytical problem-solving and technical execution, holding dual degrees from the University of Nebraska-Lincoln in Mathematics (Statistics & Data Science) and a Bachelor of Journalism in Broadcasting (Media Production), alongside an Informatics minor.
         </p>
         
@@ -177,97 +29,29 @@
             <div class="card">
                 <h3>Current Role</h3>
                 <p><strong>Client Service Specialist</strong><br>Unico Group</p>
-                <p style="margin-top: 10px; font-size: 0.95rem;">Focusing on client success, data management, and operational excellence in a fast-paced environment.</p>
+                <p class="card-desc">Focusing on client success, data management, and operational excellence in a fast-paced environment.</p>
             </div>
             <div class="card">
                 <h3>Previous Experience</h3>
                 <p><strong>Technical Media Producer</strong><br>1011 News</p>
-                <p style="margin-top: 10px; font-size: 0.95rem;">Directed live broadcasts and managed technical media production, ensuring high-quality broadcast standards.</p>
+                <p class="card-desc">Directed live broadcasts and managed technical media production, ensuring high-quality broadcast standards.</p>
             </div>
         </div>
     </section>
 
     <section id="lab">
-        <h2 style="font-size: 2.5rem; margin-bottom: 10px; color: var(--accent);">The Lab</h2>
-        <p style="color: var(--text-muted); max-width: 600px;">
+        <h2 class="section-title text-accent">The Lab</h2>
+        <p class="section-desc" style="max-width: 600px;">
             A sandbox for HTML, CSS, and JavaScript experiments. Test your reflexes below.
         </p>
         
         <div id="game-container">
             <canvas id="reactionGame" width="300" height="200"></canvas>
             <div id="timerDisplay">Click "Start" to begin!</div>
-            <button class="btn" onclick="startTest()">Start Test</button>
+            <button class="btn" id="startBtn">Start Test</button>
         </div>
     </section>
 
-    <script>
-        // --- Reaction Game Logic ---
-        const canvas = document.getElementById('reactionGame');
-        const ctx = canvas.getContext('2d');
-        const display = document.getElementById('timerDisplay');
-        let startTime, timeout;
-        let waitingForClick = false;
-
-        // Draw the initial standby state
-        function drawStandby() {
-            ctx.fillStyle = "#333";
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = "#fff";
-            ctx.font = "20px Inter, sans-serif";
-            ctx.textAlign = "center";
-            ctx.textBaseline = "middle";
-            ctx.fillText("Ready?", canvas.width/2, canvas.height/2);
-        }
-        
-        drawStandby();
-
-        function startTest() {
-            // Reset State for a new test
-            ctx.fillStyle = "#ff4444"; // Red
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            display.innerText = "Wait for green...";
-            waitingForClick = false;
-            clearTimeout(timeout);
-
-            // Random delay between 2 and 5 seconds
-            const delay = Math.random() * 3000 + 2000;
-            
-            timeout = setTimeout(() => {
-                ctx.fillStyle = "#00ff88"; // Green
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-                display.innerText = "CLICK NOW!";
-                startTime = Date.now();
-                waitingForClick = true;
-            }, delay);
-        }
-
-        canvas.addEventListener('mousedown', () => {
-            if (waitingForClick) {
-                // Successful click
-                const reactionTime = Date.now() - startTime;
-                display.innerText = `Reaction Time: ${reactionTime}ms! Click Start to try again.`;
-                ctx.font = "20px Inter, sans-serif";
-                ctx.textAlign = "center";
-                waitingForClick = false;
-                
-                // Draw success state
-                ctx.fillStyle = "#222";
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-                ctx.fillStyle = "#00ff88";
-                ctx.fillText(`${reactionTime}ms`, canvas.width/2, canvas.height/2);
-
-            } else if (display.innerText === "Wait for green...") {
-                // Clicked too early
-                clearTimeout(timeout);
-                display.innerText = "Too early! Click Start to try again.";
-                ctx.fillStyle = "#333";
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-                ctx.font = "20px Inter, sans-serif";
-                ctx.textAlign = "center";
-                ctx.fillStyle = "#ff4444";
-                ctx.fillText("Too early!", canvas.width/2, canvas.height/2);
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
