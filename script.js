@@ -11,7 +11,7 @@ function drawStandby() {
     ctx.fillStyle = "#333";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = "#fff";
-    ctx.font = "20px Inter, sans-serif";
+    ctx.font = "20px sans-serif";
     ctx.textAlign = "center";
     ctx.fillText("Ready?", canvas.width/2, canvas.height/2);
 }
