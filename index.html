@@ -1,1 +1,97 @@
-<h1>Hello World</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tyson Shields | Lab</title>
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --text: #eeeeee;
+            --accent: #00ff88;
+        }
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', system-ui, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        h1 { font-size: 3rem; margin-bottom: 0.5rem; color: var(--accent); }
+        p { opacity: 0.8; margin-bottom: 2rem; }
+        
+        /* Game Container */
+        #game-container {
+            border: 2px solid var(--accent);
+            padding: 20px;
+            border-radius: 12px;
+            background: #111;
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+        }
+        canvas {
+            background: #000;
+            display: block;
+        }
+        .status { margin-top: 1rem; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <h1>TYSON SHIELDS</h1>
+    <p>Domain Test & Custom Code Environment</p>
+
+    <div id="game-container">
+        <h3>Mini Logic Test: Reaction Timer</h3>
+        <p>Click the square as fast as you can when it turns <span style="color:var(--accent)">GREEN</span>.</p>
+        <canvas id="reactionGame" width="300" height="200"></canvas>
+        <div class="status" id="timerDisplay">Waiting to start...</div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('reactionGame');
+        const ctx = canvas.getContext('2d');
+        const display = document.getElementById('timerDisplay');
+        let startTime, timeout;
+        let waitingForClick = false;
+
+        function startTest() {
+            ctx.fillStyle = "#ff4444";
+            ctx.fillRect(0, 0, 300, 200);
+            display.innerText = "Wait for green...";
+            waitingForClick = false;
+
+            const delay = Math.random() * 3000 + 2000;
+            timeout = setTimeout(() => {
+                ctx.fillStyle = "#00ff88";
+                ctx.fillRect(0, 0, 300, 200);
+                display.innerText = "CLICK NOW!";
+                startTime = Date.now();
+                waitingForClick = true;
+            }, delay);
+        }
+
+        canvas.addEventListener('mousedown', () => {
+            if (waitingForClick) {
+                const reactionTime = Date.now() - startTime;
+                display.innerText = `Reaction Time: ${reactionTime}ms! Click to try again.`;
+                waitingForClick = false;
+            } else {
+                clearTimeout(timeout);
+                startTest();
+            }
+        });
+
+        // Initial Draw
+        ctx.fillStyle = "#333";
+        ctx.fillRect(0, 0, 300, 200);
+        ctx.fillStyle = "white";
+        ctx.font = "16px Arial";
+        ctx.fillText("Click here to start", 85, 105);
+    </script>
+</body>
+</html>
