@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+    flex: 1;
+}
+
+/* Typography */
+h1, h2, h3 { color: var(--text-primary); margin-bottom: var(--spacing-md); }
+p { color: var(--text-secondary); margin-bottom: var(--spacing-md); }
+a { color: var(--accent-color); text-decoration: none; transition: 0.2s; }
+a:hover { color: var(--accent-hover); }
+
+/* Navigation */
+nav {
+    background-color: var(--bg-secondary);
+    padding: var(--spacing-md) var(--spacing-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav ul { list-style: none; display: flex; gap: var(--spacing-md); }
+
+/* Buttons */
+.button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: 2px solid var(--accent-color);
+}
+.button:hover { background-color: var(--accent-hover); color: #fff; border-color: var(--accent-hover); }
+.button-outline { background-color: transparent; }
+.button-outline:hover { background-color: var(--accent-color); }
+
+/* Layout blocks */
+.card {
+    background-color: var(--bg-secondary);
+    padding: var(--spacing-lg);
+    border-radius: 8px;
+    margin-bottom: var(--spacing-md);
+}
+
+footer {
+    text-align: center;
+    padding: var(--spacing-lg);
+    background-color: var(--bg-secondary);
+    margin-top: auto;
+}
