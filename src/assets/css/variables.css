@@ -1,15 +1,48 @@
+/**
+ * variables.css - Global Design Tokens
+ * Tyson W. Shields | 2026
+ */
+
 :root {
-    /* Dark Mode Defaults */
-    --bg-primary: #121212;
-    --bg-secondary: #1e1e1e;
-    --text-primary: #e0e0e0;
-    --text-secondary: #a0a0a0;
-    --accent-color: #4a90e2;
-    --accent-hover: #357abd;
+    /* Color Palette - Dark Theme Primary */
+    --bg-color: #0f172a;           /* Deep Navy/Dark Slate */
+    --bg-card: #1e293b;            /* Lighter Slate for cards/sections */
+    --text-main: #f8fafc;          /* Off-white for high readability */
+    --text-muted: #94a3b8;         /* Muted gray for secondary info */
     
+    /* Brand Accents */
+    --accent-primary: #38bdf8;     /* Sky Blue - Great for links/buttons */
+    --accent-secondary: #818cf8;   /* Indigo - Good for data viz gradients */
+    --accent-hover: #7dd3fc;       /* Lighter blue for hover states */
+    
+    /* Functional Colors */
+    --border-color: #334155;
+    --error: #ef4444;
+    --success: #22c55e;
+
     /* Typography */
-    --font-main: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    --spacing-sm: 8px;
-    --spacing-md: 16px;
-    --spacing-lg: 32px;
+    --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace; /* For Lab/Apps */
+    
+    /* Spacing & Sizing */
+    --container-max: 1100px;
+    --section-padding: 4rem 2rem;
+    --border-radius: 8px;
+    --transition-speed: 0.3s;
+
+    /* Shadow/Depth */
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.2);
+}
+
+/* Optional: Auto-switch for users who prefer Light Mode */
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg-color: #f8fafc;
+        --bg-card: #ffffff;
+        --text-main: #0f172a;
+        --text-muted: #475569;
+        --border-color: #e2e8f0;
+        --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.05);
+    }
 }

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator | Lab | Tyson W. Shields</title>
+    
+    <link rel="stylesheet" href="../../assets/css/variables.css">
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header id="navbar-placeholder">
+        </header>
+
+    <main class="container">
+        <header class="app-header">
+            <a href="../../pages/lab.html" class="sub-text">&larr; Back to Lab</a>
+            <h1>Functionality Lab: Calculator</h1>
+            <p>A simple demonstration of DOM manipulation and arithmetic logic.</p>
+        </header>
+
+        <section class="calculator-wrapper">
+            <div class="calculator">
+                <div class="calc-display" id="display">0</div>
+                <div class="calc-buttons">
+                    <button class="btn-calc utility" data-action="clear">AC</button>
+                    <button class="btn-calc utility" data-action="delete">DEL</button>
+                    <button class="btn-calc operator" data-action="divide">÷</button>
+                    
+                    <button class="btn-calc number">7</button>
+                    <button class="btn-calc number">8</button>
+                    <button class="btn-calc number">9</button>
+                    <button class="btn-calc operator" data-action="multiply">×</button>
+                    
+                    <button class="btn-calc number">4</button>
+                    <button class="btn-calc number">5</button>
+                    <button class="btn-calc number">6</button>
+                    <button class="btn-calc operator" data-action="subtract">−</button>
+                    
+                    <button class="btn-calc number">1</button>
+                    <button class="btn-calc number">2</button>
+                    <button class="btn-calc number">3</button>
+                    <button class="btn-calc operator" data-action="add">+</button>
+                    
+                    <button class="btn-calc number span-two">0</button>
+                    <button class="btn-calc number">.</button>
+                    <button class="btn-calc equals" data-action="calculate">=</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer-placeholder">
+        </footer>
+
+    <script src="../../assets/js/utils.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>

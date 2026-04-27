@@ -4,24 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | Tyson W. Shields</title>
+    
     <link rel="stylesheet" href="../assets/css/variables.css">
     <link rel="stylesheet" href="../assets/css/main.css">
 </head>
 <body>
-    <div id="navbar-container"></div>
+
+    <header id="navbar-placeholder">
+        <nav>
+            <div class="logo"><a href="../../index.html">TWS</a></div>
+            <ul>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="lab.html">Lab</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main class="container">
-        <h1>About Me</h1>
-        <div class="card">
-            <h2>Background</h2>
-            <p>I am a Client Service Specialist based in Lincoln, Nebraska. I graduated from the University of Nebraska-Lincoln with degrees in Mathematics (Statistics and Data Science option) and a Bachelor of Journalism in Broadcasting (Media Production option).</p>
+        <section class="about-intro">
+            <h1>About Me</h1>
+            <p>
+                I am a multidisciplinary professional based in Lincoln, Nebraska, 
+                blending technical analytical skills with creative media production.
+            </p>
+        </section>
+
+        <hr>
+
+        <section class="education">
+            <h2>Education</h2>
+            <div class="edu-item">
+                <h3>University of Nebraska-Lincoln</h3>
+                <p class="sub-text">B.S. Mathematics (Statistics & Data Science) | B.J. Journalism (Broadcasting)</p>
+                <p>Minor in Informatics</p>
+            </div>
+        </section>
+
+        <section class="experience">
+            <h2>Professional Background</h2>
             
-            <h2>Interests</h2>
-            <p>When I'm not working or coding up experiments in the lab, I'm usually following Nebraska football, suffering as a lifelong Detroit Lions fan, listening to hip-hop, or gaming.</p>
-        </div>
+            <div class="job-item">
+                <h3>Client Service Specialist</h3>
+                <p class="company">Unico Group</p>
+                <p>Managing client relations and operational workflows within the benefits sector.</p>
+            </div>
+
+            <div class="job-item">
+                <h3>Technical Media Producer</h3>
+                <p class="company">1011 News</p>
+                <p>Directed live broadcasts and managed technical equipment for high-stakes news environments.</p>
+            </div>
+        </section>
+
+        <section class="skills">
+            <h2>Core Technical Skills</h2>
+            <ul class="skills-grid">
+                <li>Statistics & Data Analysis</li>
+                <li>HTML/CSS/JavaScript</li>
+                <li>Media Production & DSLR Operations</li>
+                <li>Revenue Operations</li>
+            </ul>
+        </section>
+
+        <section class="cta">
+            <p>Want to see what I'm working on lately?</p>
+            <a href="lab.html" class="btn primary">Check out the Lab</a>
+        </section>
     </main>
 
-    <div id="footer-container"></div>
+    <footer id="footer-placeholder">
+        <p>&copy; 2026 Tyson W. Shields</p>
+    </footer>
+
+    <script src="../assets/js/utils.js"></script>
     <script src="../assets/js/main.js"></script>
 </body>
 </html>

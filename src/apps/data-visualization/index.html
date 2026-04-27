@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visualization Hub | Tyson W. Shields</title>
+    
+    <link rel="stylesheet" href="../../assets/css/variables.css">
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    
+    <style>
+        /* App-specific overrides for a technical feel */
+        body { font-family: var(--font-mono); }
+        .viz-container {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 1rem;
+            min-height: 400px;
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .controls {
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header id="navbar-placeholder">
+        </header>
+
+    <main class="container">
+        <header class="app-header">
+            <a href="../../pages/lab.html" class="sub-text">&larr; Back to Lab</a>
+            <h1>Data Visualization Hub</h1>
+            <p>Interactive explorations using statistical models and real-world datasets.</p>
+        </header>
+
+        <section class="viz-interface">
+            <div class="controls">
+                <button class="btn secondary" id="update-data">Refresh Dataset</button>
+                <select id="viz-type" class="btn secondary">
+                    <option value="linear">Linear Regression</option>
+                    <option value="distribution">Normal Distribution</option>
+                    <option value="scatter">Scatter Plot</option>
+                </select>
+            </div>
+
+            <div class="viz-container" id="main-canvas">
+                <p class="sub-text">Visualization Engine Initializing...</p>
+            </div>
+        </section>
+
+        <section class="technical-details">
+            <h3>Model Overview</h3>
+            <p>This sandbox utilizes <code>Utils.mapRange</code> for coordinate scaling and follows standard statistical distributions for data generation.</p>
+        </section>
+    </main>
+
+    <footer id="footer-placeholder">
+        </footer>
+
+    <script src="../../assets/js/utils.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const canvas = document.getElementById('main-canvas');
+            
+            // Example of using your global Utils
+            if (window.Utils) {
+                console.log("Data Viz Hub: Utils loaded successfully.");
+                const formatted = Utils.formatNumber(1250000);
+                console.log(`Test formatting: ${formatted}`);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -4,30 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Lab | Tyson W. Shields</title>
+    
     <link rel="stylesheet" href="../assets/css/variables.css">
     <link rel="stylesheet" href="../assets/css/main.css">
 </head>
 <body>
-    <div id="navbar-container"></div>
+
+    <header id="navbar-placeholder">
+        <nav>
+            <div class="logo"><a href="../../index.html">TWS</a></div>
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="lab.html" class="active">Lab</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main class="container">
-        <h1>The Lab</h1>
-        <p>Welcome to the sandbox. This is where I drop standalone experiments, mini-apps, and data visualizations.</p>
-        
-        <div class="card">
-            <h3>Interactive Calculator</h3>
-            <p>A custom JavaScript calculator built from scratch.</p>
-            <a href="../apps/calculator/index.html" class="button">Launch App</a>
-        </div>
+        <section class="lab-header">
+            <h1>The Lab</h1>
+            <p>A collection of experiments, functional tools, and data-heavy projects exploring the intersection of math and media.</p>
+        </section>
 
-        <div class="card">
-            <h3>Data Visualization Sandbox</h3>
-            <p>Testing out data sets using JS and CSS grids.</p>
-            <a href="../apps/data-visualization/index.html" class="button">View Experiment</a>
-        </div>
+        <section class="apps-grid">
+            <div class="app-card">
+                <div class="app-info">
+                    <h3>Basic Calculator</h3>
+                    <p>A clean, functional calculator built to practice logic and DOM manipulation.</p>
+                    <div class="tags">
+                        <span>JavaScript</span>
+                        <span>UI Design</span>
+                    </div>
+                </div>
+                <a href="../apps/calculator/index.html" class="btn secondary">Launch App</a>
+            </div>
+
+            <div class="app-card">
+                <div class="app-info">
+                    <h3>Data Visualization Hub</h3>
+                    <p>Interactive charts and statistical models utilizing my background in Mathematics and Statistics.</p>
+                    <div class="tags">
+                        <span>D3.js</span>
+                        <span>Statistics</span>
+                        <span>Data Science</span>
+                    </div>
+                </div>
+                <a href="../apps/data-visualization/index.html" class="btn secondary">View Insights</a>
+            </div>
+
+            <div class="app-card placeholder">
+                <div class="app-info">
+                    <h3>New Experiment Loading...</h3>
+                    <p>Currently working on a video metadata parser and a custom soundboard project.</p>
+                </div>
+                <button class="btn disabled" disabled>Coming Soon</button>
+            </div>
+        </section>
     </main>
 
-    <div id="footer-container"></div>
+    <footer id="footer-placeholder">
+        <p>&copy; 2026 Tyson W. Shields</p>
+    </footer>
+
+    <script src="../assets/js/utils.js"></script>
     <script src="../assets/js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,21 @@
+{
+  "name": "tyson-shields-portfolio",
+  "version": "1.0.0",
+  "description": "Personal website and interactive laboratory for data science and media production projects.",
+  "main": "index.html",
+  "scripts": {
+    "start": "browser-sync start --server --files 'src/**/*', 'index.html'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "portfolio",
+    "data-science",
+    "media-production",
+    "javascript"
+  ],
+  "author": "Tyson W. Shields",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^3.0.0"
+  }
+}

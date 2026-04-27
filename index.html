@@ -3,26 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tyson W. Shields | Home</title>
+    <title>Tyson W. Shields | Portfolio</title>
+    
     <link rel="stylesheet" href="src/assets/css/variables.css">
     <link rel="stylesheet" href="src/assets/css/main.css">
+    
+    <link rel="icon" href="src/assets/images/icons/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <div id="navbar-container" data-path="src/components/navbar.html"></div>
 
-    <main class="container">
-        <section class="hero">
-            <h1>Hi, I'm Tyson W. Shields</h1>
-            <p>Client Service Specialist | Lincoln, NE</p>
-            <p>Welcome to my personal slice of the internet. Check out my work, read about my background, or explore the lab for some of my coding experiments.</p>
-            <div class="hero-actions">
-                <a href="src/pages/portfolio.html" class="button">View Portfolio</a>
-                <a href="src/pages/lab.html" class="button button-outline">Enter The Lab</a>
+    <header id="navbar-placeholder">
+        <nav>
+            <div class="logo">TWS</div>
+            <ul>
+                <li><a href="src/pages/about.html">About</a></li>
+                <li><a href="src/pages/portfolio.html">Portfolio</a></li>
+                <li><a href="src/pages/lab.html">Lab</a></li>
+                <li><a href="src/pages/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="hero-section">
+        <section class="intro">
+            <h1>Tyson W. Shields</h1>
+            <p class="tagline">Data Science | Journalism | Media Production</p>
+            <p class="description">
+                Building intersections between statistics and storytelling. 
+                Explore my latest experiments in the Lab or check out my professional work.
+            </p>
+            <div class="cta-buttons">
+                <a href="src/pages/portfolio.html" class="btn primary">View Portfolio</a>
+                <a href="src/assets/downloads/resume.pdf" class="btn secondary" target="_blank">Download Resume</a>
             </div>
+        </section>
+
+        <section class="featured-image">
+            <img src="src/assets/images/profile.jpg" alt="Tyson W. Shields" class="hero-img">
         </section>
     </main>
 
-    <div id="footer-container" data-path="src/components/footer.html"></div>
+    <footer id="footer-placeholder">
+        <p>&copy; 2026 Tyson W. Shields. Built with HTML, CSS, and JS.</p>
+    </footer>
+
+    <script src="src/assets/js/utils.js"></script>
     <script src="src/assets/js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,98 @@
+/**
+ * style.css - Calculator App Styles
+ * Located in: src/apps/calculator/
+ */
+
+/* 1. App-Specific Layout */
+.calculator-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.calculator {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 360px;
+    box-shadow: var(--shadow-md);
+}
+
+/* 2. The Display */
+.calc-display {
+    background-color: var(--bg-color);
+    color: var(--accent-primary);
+    font-family: var(--font-mono);
+    font-size: 2.5rem;
+    padding: 1rem;
+    text-align: right;
+    border-radius: var(--border-radius);
+    margin-bottom: 1.5rem;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+/* 3. Button Grid */
+.calc-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+}
+
+.btn-calc {
+    aspect-ratio: 1 / 1;
+    border: none;
+    border-radius: var(--border-radius);
+    font-family: var(--font-main);
+    font-size: 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    transition: all 0.2s ease;
+    border: 1px solid var(--border-color);
+}
+
+.btn-calc:hover {
+    background-color: var(--border-color);
+    transform: scale(0.98);
+}
+
+/* 4. Specialized Button Styles */
+.btn-calc.operator {
+    color: var(--accent-primary);
+    background-color: rgba(56, 189, 248, 0.1);
+}
+
+.btn-calc.utility {
+    color: var(--accent-secondary);
+}
+
+.btn-calc.equals {
+    background-color: var(--accent-primary);
+    color: var(--bg-color);
+    grid-column: span 1; /* Keeping it standard 1x1 */
+}
+
+.btn-calc.span-two {
+    grid-column: span 2;
+    aspect-ratio: auto; /* Allow height to match others */
+}
+
+/* 5. Mobile Adjustments */
+@media (max-width: 400px) {
+    .calculator {
+        padding: 1rem;
+    }
+    
+    .calc-display {
+        font-size: 2rem;
+    }
+}

@@ -4,30 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Tyson W. Shields</title>
+    
     <link rel="stylesheet" href="../assets/css/variables.css">
     <link rel="stylesheet" href="../assets/css/main.css">
 </head>
 <body>
-    <div id="navbar-container"></div>
+
+    <header id="navbar-placeholder">
+        <nav>
+            <div class="logo"><a href="../../index.html">TWS</a></div>
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                <li><a href="lab.html">Lab</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main class="container">
-        <h1>My Work</h1>
-        <p>A selection of my professional projects and media production work.</p>
-        
-        <div class="card">
-            <h3>Project Title 1</h3>
-            <p>Brief description of the project, the technologies used, and your role.</p>
-            <a href="#">View Details</a>
-        </div>
+        <section class="portfolio-header">
+            <h1>Portfolio</h1>
+            <p>A showcase of my professional work in media production, data storytelling, and web development.</p>
+        </section>
 
-        <div class="card">
-            <h3>Project Title 2</h3>
-            <p>Brief description of the project, the technologies used, and your role.</p>
-            <a href="#">View Details</a>
-        </div>
+        <section class="portfolio-grid">
+            <article class="portfolio-item">
+                <div class="project-media">
+                    <img src="../assets/images/project-news.jpg" alt="Broadcasting Project Thumbnail">
+                </div>
+                <div class="project-content">
+                    <h3>Technical Media Direction</h3>
+                    <p class="project-meta">Broadcast Journalism | Media Production</p>
+                    <p>Streamlining live newsroom workflows and managing complex technical equipment for daily broadcasts at 1011 News.</p>
+                    <div class="project-tags">
+                        <span>Production</span>
+                        <span>Directing</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="portfolio-item">
+                <div class="project-media">
+                    <img src="../assets/images/project-data.jpg" alt="Data Science Project Thumbnail">
+                </div>
+                <div class="project-content">
+                    <h3>Statistical Analysis Models</h3>
+                    <p class="project-meta">Mathematics | Data Science</p>
+                    <p>Applying advanced statistical methods to visualize complex datasets, bridging the gap between raw numbers and actionable insights.</p>
+                    <div class="project-tags">
+                        <span>Statistics</span>
+                        <span>Informatics</span>
+                    </div>
+                    <a href="lab.html" class="project-link">View Interactive Models &rarr;</a>
+                </div>
+            </article>
+
+            <article class="portfolio-item">
+                <div class="project-media">
+                    <img src="../assets/images/project-web.jpg" alt="Web Development Project Thumbnail">
+                </div>
+                <div class="project-content">
+                    <h3>Personal Brand Architecture</h3>
+                    <p class="project-meta">Web Development | Design</p>
+                    <p>Developing a custom, modular portfolio framework using HTML, CSS, and JavaScript to host standalone technical applications.</p>
+                    <div class="project-tags">
+                        <span>HTML/CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section class="resume-cta">
+            <h3>Looking for the full breakdown?</h3>
+            <p>Detailed experience and technical certifications are available in my resume.</p>
+            <a href="../assets/downloads/resume.pdf" class="btn secondary" target="_blank">Download PDF Resume</a>
+        </section>
     </main>
 
-    <div id="footer-container"></div>
+    <footer id="footer-placeholder">
+        <p>&copy; 2026 Tyson W. Shields</p>
+    </footer>
+
+    <script src="../assets/js/utils.js"></script>
     <script src="../assets/js/main.js"></script>
 </body>
 </html>
