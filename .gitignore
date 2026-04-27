@@ -1,11 +1,13 @@
 # Dependency directories
 node_modules/
 jspm_packages/
+pnpm-lock.yaml
+package-lock.json
 
 # Build outputs (if you eventually use a bundler like Vite or Parcel)
 dist/
 build/
-.cache/
+out/
 
 # OS-generated files
 .DS_Store
@@ -14,12 +16,14 @@ build/
 Thumbs.db
 ehthumbs.db
 desktop.ini
+*.tmp
 
 # IDE/Editor files
 .vscode/
 .idea/
 *.swp
 *.swo
+
 
 # Local environment variables
 .env
@@ -30,7 +34,7 @@ desktop.ini
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-logs
+logs/
 *.log
 
 # Optional: Ignore high-res raw images if you only want to track optimized versions

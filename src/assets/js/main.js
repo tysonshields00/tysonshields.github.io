@@ -43,11 +43,11 @@ async function loadComponent(elementId, path) {
  */
 function highlightActiveNav() {
     const currentPath = window.location.pathname;
-    const navLinks = document.querySelectorAll('.nav-links a');
+    const navLinks = Utils.$$('.nav-links a');
 
     navLinks.forEach(link => {
         // If the href matches the current path, highlight it
-        if (link.getAttribute('href') === currentPath) {
+        if (link.getAttribute('href') === currentPath || (currentPath.endsWith('/') && link.getAttribute('href').endsWith('index.html'))) {
             link.classList.add('active');
         }
         
@@ -65,7 +65,7 @@ function setupMobileMenu() {
     // Using event delegation because the navbar is loaded dynamically
     document.addEventListener('click', (e) => {
         const menuToggle = e.target.closest('#mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
+        const navLinks = Utils.$('.nav-links');
 
         if (menuToggle) {
             navLinks.classList.toggle('nav-active');

@@ -3,6 +3,9 @@
  * Located in: src/apps/calculator/
  */
 
+/* 0. Import Global Variables */
+@import url("../../assets/css/variables.css");
+
 /* 1. App-Specific Layout */
 .calculator-wrapper {
     display: flex;

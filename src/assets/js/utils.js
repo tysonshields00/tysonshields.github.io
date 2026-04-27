@@ -46,7 +46,7 @@ const Utils = {
     },
 
     // Simple delay for async operations (useful for simulated loading states)
-    sleep: (ms) => new Promise(resolve => setTimeout(resolve, ms)),
+    sleep: (ms) => new Promise((resolve) => setTimeout(resolve, ms)),
 
     /**
      * URL & Pathing Helpers

@@ -88,9 +88,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateDisplay() {
-        // Use your global Utils helper for thousands separators if you want
-        display.textContent = currentInput.length > 12 
-            ? parseFloat(currentInput).toPrecision(8) 
-            : currentInput;
+        if (currentInput === 'Error') {
+            display.textContent = currentInput;
+            return;
+        }
+
+        const num = parseFloat(currentInput);
+        display.textContent = currentInput.length > 12
+            ? num.toPrecision(8)
+            : Utils.formatNumber(currentInput);
     }
 });

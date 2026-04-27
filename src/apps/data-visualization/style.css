@@ -4,7 +4,7 @@
  */
 
 /* 1. Import Global Variables */
-@import "../../assets/css/variables.css";
+@import url("../../assets/css/variables.css");
 
 /* 2. App-Specific Layout */
 .viz-interface {

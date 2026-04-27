@@ -22,6 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
      */
     const renderVisualization = () => {
         const type = vizSelector.value;
+        
+        if (!canvas) {
+            console.error('Canvas element not found');
+            return;
+        }
         canvas.innerHTML = ''; // Clear previous render
 
         // Create an SVG element dynamically
@@ -87,12 +92,12 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Event Listeners
-    updateBtn.addEventListener('click', () => {
+    updateBtn?.addEventListener('click', () => {
         console.log("Refreshing statistical model...");
         renderVisualization();
     });
 
-    vizSelector.addEventListener('change', renderVisualization);
+    vizSelector?.addEventListener('change', renderVisualization);
 
     // Initial Render
     renderVisualization();

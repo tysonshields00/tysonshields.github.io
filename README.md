@@ -1,4 +1,4 @@
-# My Personal Website
+# Tyson Shields - Personal Website
 
 ### Root Directory
 
@@ -19,6 +19,7 @@ These are the main sections of my site.
 - **portfolio.html**: Where I show off my best, most polished projects.
 - **lab.html**: The hub for all my experiments and the apps I've built.
 - **contact.html**: How people can get in touch with me.
+- **blog.html**: A place for my thoughts on tech and development.
 
 #### src/apps/
 
@@ -26,6 +27,7 @@ I use this folder for standalone functional projects. Each one gets its own fold
 
 - **calculator/**: A simple app I built with its own HTML, CSS, and JS.
 - **data-visualization/**: My dedicated space for math and data-heavy interactive projects.
+- **weather-app/**: A real-time weather dashboard using an external API.
 
 #### src/components/
 
