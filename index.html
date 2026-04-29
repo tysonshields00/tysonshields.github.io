@@ -3,143 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tyson Shields | Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Tyson Shields | Quantifying Narrative</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-    <nav class="navbar">
-        <div class="nav-content">
-            <a href="#" class="logo">TS.</a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body class="theme-dark">
+
+    <nav class="site-nav">
+        <div class="brand">
+            <span class="brand-name">Tyson Shields</span>
+            <span class="brand-technical font-mono" aria-hidden="true">init()</span>
         </div>
+        <ul class="nav-links">
+            <li><a href="#bridge">Projects</a></li>
+            <li><a href="#trajectory">Timeline</a></li>
+            <li><a href="#live">Live</a></li>
+        </ul>
     </nav>
 
-    <main>
-        <section id="hero" class="hero fade-in">
-            <div class="hero-content">
-                <p class="mono-accent">Hi, my name is</p>
-                <h1>Tyson Shields.</h1>
-                <h2 class="subtitle">Data Science & Media Production.</h2>
-                <p class="hero-desc">
-                    I build digital experiences that bridge the gap between complex analytics and compelling storytelling. Based in Lincoln, NE.
-                </p>
-                <a href="#projects" class="btn primary-btn">View My Work</a>
+    <header class="hero-section">
+        <div class="media-container">
+            <video autoplay loop muted playsinline id="production-reel" poster="assets/reel-poster.jpg">
+                <source src="assets/production-reel.mp4" type="video/mp4">
+            </video>
+            <div class="scanline-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">Quantifying Narrative</h1>
+            <p class="hero-prose">Bridging Data Science and Media Production</p>
+            <div class="system-status font-mono">
+                <span class="status-dot"></span>
+                <span>System: Active</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="hub-container">
+        
+        <section id="bridge" class="hub-section">
+            <header class="section-header">
+                <h2>The Bridge</h2>
+                <span class="meta-tag font-mono">source: projects.json</span>
+            </header>
+
+            <div class="data-viz-container" id="scroll-viz-hook">
+                <canvas id="bridge-canvas" width="1200" height="400" aria-label="Interactive data visualization mapping project coordinates"></canvas>
+            </div>
+
+            <div class="project-grid" id="project-feed">
+                <noscript>
+                    <p class="font-mono">JavaScript required to compile project nodes.</p>
+                </noscript>
             </div>
         </section>
 
-        <section id="about" class="about section-padding fade-in">
-            <h2 class="section-title"><span>01.</span> About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        I hold dual degrees in Mathematics and Broadcasting. This unique combination allows me to approach problems logically while maintaining a sharp eye for high quality UI/UX design and digital media.
-                    </p>
-                    <p>
-                        Whether I am developing custom web applications, analyzing data sets, or editing video content, I thrive on technical challenges. I am a night owl who enjoys deep focus and clean, efficient code.
-                    </p>
-                    <ul class="skills-list">
-                        <li>Data Visualization</li>
-                        <li>Video Editing</li>
-                        <li>JavaScript / HTML / CSS</li>
-                        <li>Digital Storytelling</li>
-                        <li>Statistical Analysis</li>
-                        <li>UI/UX Design</li>
-                    </ul>
+        <section id="trajectory" class="hub-section">
+            <header class="section-header">
+                <h2>Trajectory</h2>
+                <span class="meta-tag font-mono">var path = new CareerPath();</span>
+            </header>
+            
+            <div class="timeline-container" id="interactive-timeline">
                 </div>
-            </div>
         </section>
 
-        <section id="projects" class="projects section-padding fade-in">
-            <h2 class="section-title"><span>02.</span> Selected Projects</h2>
-            <div class="project-grid">
-                
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="folder-icon">📁</div>
-                        <div class="project-links">
-                            <a href="#" aria-label="GitHub Link">GH</a>
-                        </div>
-                    </div>
-                    <h3 class="project-title">Custom Web Calculator</h3>
-                    <div class="project-description">
-                        <p>A fully integrated, custom calculator web application engineered for speed and logic. Designed with a sleek dark mode interface prioritizing user experience and precision.</p>
-                    </div>
-                    <ul class="project-tech">
-                        <li>JavaScript</li>
-                        <li>CSS Grid</li>
-                        <li>DOM Manipulation</li>
-                    </ul>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="folder-icon">📁</div>
-                        <div class="project-links">
-                            <a href="#" aria-label="External Link">↗</a>
-                        </div>
-                    </div>
-                    <h3 class="project-title">Data Analytics Dashboard</h3>
-                    <div class="project-description">
-                        <p>Interactive data visualization project transforming raw statistical data into digestible, dynamic charts for strategic decision making.</p>
-                    </div>
-                    <ul class="project-tech">
-                        <li>Python</li>
-                        <li>D3.js</li>
-                        <li>Data Science</li>
-                    </ul>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="folder-icon">📁</div>
-                        <div class="project-links">
-                            <a href="#" aria-label="Video Link">▶</a>
-                        </div>
-                    </div>
-                    <h3 class="project-title">Digital Media Production</h3>
-                    <div class="project-description">
-                        <p>A collection of video editing and storytelling projects focusing on pacing, audio mixing, and high fidelity visual output.</p>
-                    </div>
-                    <ul class="project-tech">
-                        <li>Premiere Pro</li>
-                        <li>After Effects</li>
-                        <li>Audio Engineering</li>
-                    </ul>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="contact" class="contact section-padding fade-in">
-            <h2 class="section-title"><span>03.</span> What is Next?</h2>
-            <h3 class="contact-heading">Get In Touch</h3>
-            <p class="contact-text">
-                I am currently open to new opportunities that blend data, logic, and creative media. My inbox is always open.
-            </p>
-            <a href="mailto:hello@tysonshields.com" class="btn primary-btn">Say Hello</a>
-        </section>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <p>Designed & Built by Tyson Shields</p>
-            <p class="copyright">&copy; <span id="year"></span></p>
+    <aside id="live" class="live-feed-sidebar">
+        <div class="feed-module logic-module">
+            <h3 class="font-mono">logic_state</h3>
+            <div id="current-puzzle" class="feed-content">
+                Awaiting permutation sequence...
+            </div>
         </div>
-    </footer>
+        
+        <div class="feed-module audio-module">
+            <h3 class="font-mono">audio_stream</h3>
+            <div id="music-status" class="feed-content rhythmic-pulse">
+                Monitoring frequency output...
+            </div>
+        </div>
+    </aside>
 
-    <script src="js/script.js"></script>
+    <script src="js/core.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/data-viz.js"></script>
+    <script src="js/media-player.js"></script>
 </body>
 </html>

@@ -1,0 +1,275 @@
+/* ==========================================================================
+   SUPPLEMENTAL COMPONENT TOKENS
+   ========================================================================== */
+:root {
+    --border-color: rgba(255, 255, 255, 0.1);
+    --border-highlight: rgba(255, 255, 255, 0.25);
+    --ease-weighted: cubic-bezier(0.2, 0, 0.2, 1);
+    --shadow-weighted: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* ==========================================================================
+   LAYOUT CONTAINERS & SIDEBARS
+   ========================================================================== */
+.hub-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 6rem 2rem;
+    display: grid;
+    gap: 8rem;
+}
+
+.hub-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.section-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+}
+
+.meta-tag {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+}
+
+/* Minimalist Navigation */
+.site-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid transparent;
+    transition: border-color var(--transition-base);
+}
+
+.site-nav:hover {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.brand-name {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.brand-technical {
+    font-size: 0.8rem;
+    color: var(--accent);
+    opacity: 0.8;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   PROJECT CARDS (.card-project)
+   ========================================================================== */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.card-project {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    transition: transform 400ms var(--ease-weighted), 
+                box-shadow 400ms var(--ease-weighted), 
+                border-color 400ms var(--ease-weighted);
+    cursor: pointer;
+}
+
+.card-project:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-weighted);
+    border-color: var(--border-highlight);
+}
+
+.card-media {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: var(--bg-base);
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Handles both video thumbnails and data-viz canvases */
+.card-media img,
+.card-media video,
+.card-media canvas {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(80%);
+    transition: filter var(--transition-base);
+}
+
+.card-project:hover .card-media img,
+.card-project:hover .card-media video {
+    filter: grayscale(0%);
+}
+
+.card-meta {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.card-meta h3 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.card-tech-stack {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    font-size: 0.75rem;
+    color: var(--accent);
+}
+
+/* ==========================================================================
+   INTERACTIVE TIMELINE (.timeline-hub)
+   ========================================================================== */
+.timeline-hub {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding-left: 2rem;
+}
+
+/* The vertical grid line */
+.timeline-hub::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 1px;
+    background-color: var(--border-color);
+}
+
+.timeline-node {
+    position: relative;
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 2rem;
+    align-items: baseline;
+}
+
+/* The data point */
+.timeline-node::before {
+    content: '';
+    position: absolute;
+    top: 0.5rem;
+    left: -2.3rem; /* Aligns with the vertical line */
+    width: 0.6rem;
+    height: 0.6rem;
+    background-color: var(--bg-base);
+    border: 1px solid var(--accent);
+    border-radius: 50%;
+    transition: background-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.timeline-node:hover::before {
+    background-color: var(--accent);
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+.timeline-date {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.timeline-content {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    border-radius: 4px;
+}
+
+.timeline-content h4 {
+    margin-bottom: 0.25rem;
+    color: var(--text-primary);
+}
+
+/* ==========================================================================
+   LIVE MODULE (.live-indicator)
+   ========================================================================== */
+.live-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 1rem;
+    background-color: rgba(18, 18, 18, 0.8);
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-family: var(--font-mono);
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent);
+    border-radius: 50%;
+    position: relative;
+}
+
+.pulse-dot::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: var(--accent);
+    border-radius: 50%;
+    animation: pulse-ring 2s infinite var(--ease-weighted);
+    z-index: -1;
+}
+
+@keyframes pulse-ring {
+    0% {
+        width: 8px;
+        height: 8px;
+        opacity: 0.8;
+    }
+    100% {
+        width: 24px;
+        height: 24px;
+        opacity: 0;
+    }
+}

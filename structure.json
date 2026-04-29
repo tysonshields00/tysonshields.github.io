@@ -1,0 +1,36 @@
+{
+    "project": "TYSONSHIELDS.GITHUB.IO",
+    "version": "2.0.0",
+    "branding": "TYSONSHIELDS.COM",
+    "directory_structure": {
+        "root": {
+            "index.html": "Main entry point (The Hub)",
+            "README.md": "Project documentation",
+            "css/": {
+                "global.css": "Core aesthetic: Typography, high-contrast colors, grid background",
+                "components.css": "Modular styles for cards, sidebar, and layout containers"
+            },
+            "js/": {
+                "core.js": "Global entry point and DOM initialization",
+                "animations.js": "Intersection Observers for scroll reveals and transitions",
+                "data-viz.js": "Logic for Math/Stats visualizations (D3.js/Chart.js)",
+                "media-player.js": "Custom broadcast/media reel controls"
+            },
+            "assets/": {
+                "branding/": "Icons, site logos, and favicons",
+                "fonts/": "Self-hosted local copies of Inter and JetBrains Mono",
+                "img/": "Project thumbnails, headshots, and high-res stills",
+                "video/": "Production reels and media clips"
+            },
+            "data/": {
+                "projects.json": "Centralized JSON store for all Math and Media case studies",
+                "stats_models/": "Raw data files for interactive logic projects"
+            }
+        }
+    },
+    "developer_notes": [
+        "Separation of Concerns: Keeps statistics logic separate from broadcasting assets.",
+        "Scalability: Update projects.json to add content without touching HTML.",
+        "Performance: Self-hosted fonts ensure high-quality UI/UX and faster load times."
+    ]
+}

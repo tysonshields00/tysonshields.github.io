@@ -1,0 +1,216 @@
+/* ==========================================================================
+   GLOBAL VARIABLES & TOKENS
+   ========================================================================== */
+:root {
+    /* Color Palette */
+    --bg-base: #050505;
+    --bg-surface: #121212;
+    --accent: #3b82f6; /* Electric Blue */
+    
+    /* Text Colors */
+    --text-primary: #f3f4f6;
+    --text-secondary: #9ca3af;
+    --text-muted: #4b5563;
+
+    /* Typography System */
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* Motion Profile */
+    --ease-standard: cubic-bezier(0.2, 0, 0.2, 1);
+    --transition-fast: 150ms var(--ease-standard);
+    --transition-base: 300ms var(--ease-standard);
+    --transition-slow: 500ms var(--ease-standard);
+
+    /* Grid System Foundation */
+    --grid-size: 40px;
+    --grid-color: rgba(255, 255, 255, 0.03);
+    
+    /* Layout */
+    --max-width: 1200px;
+    --spacing-unit: 1rem;
+}
+
+/* ==========================================================================
+   RESET & FOUNDATION
+   ========================================================================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    font-size: 16px;
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* The Technical Blueprint Background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -1;
+    background-size: var(--grid-size) var(--grid-size);
+    background-image: 
+        linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.2) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.2) 100%);
+}
+
+/* ==========================================================================
+   TYPOGRAPHY SCALING
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+h1 { font-size: clamp(2.5rem, 5vw, 4rem); letter-spacing: -0.02em; }
+h2 { font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.01em; }
+h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+
+p {
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+    max-width: 65ch;
+}
+
+a {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color var(--transition-base);
+}
+
+a:hover {
+    color: var(--accent);
+}
+
+.font-mono {
+    font-family: var(--font-mono);
+}
+
+/* ==========================================================================
+   VIDEO HERO BASE CLASSES
+   ========================================================================== */
+.hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.media-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.media-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4; /* Dimmed to keep text readable */
+    filter: grayscale(100%) contrast(120%);
+    transition: opacity var(--transition-slow);
+}
+
+.scanline-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0),
+        rgba(255,255,255,0) 50%,
+        rgba(0,0,0,0.2) 50%,
+        rgba(0,0,0,0.2)
+    );
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+/* ==========================================================================
+   LIVE SECTION BASE CLASSES
+   ========================================================================== */
+.live-feed-sidebar {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    z-index: 100;
+}
+
+.feed-module {
+    background-color: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem;
+    border-radius: 4px;
+    backdrop-filter: blur(8px);
+    transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.feed-module:hover {
+    transform: translateX(-4px);
+    border-color: rgba(255, 255, 255, 0.2);
+    border-left-color: var(--accent);
+}
+
+.feed-module h3 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+}
+
+.feed-content {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+/* Interaction States */
+::selection {
+    background-color: var(--accent);
+    color: #fff;
+}
